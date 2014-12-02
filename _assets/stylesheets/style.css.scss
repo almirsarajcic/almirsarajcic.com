@@ -11,12 +11,12 @@
 
 @font-face {
   font-family: 'Lato';
-  src: url(asset_path('Lato.eot'));
-  src: url(asset_path('Lato.eot?#iefix')) format('embedded-opentype'),
-    url(asset_path('Lato.woff')) format('woff'),
-    url(asset_path('Lato.ttf'))  format('truetype');
-  
+  src: url(asset_path('lato-webfont.eot'));
+  src: url(asset_path('lato-webfont.eot?#iefix')) format('embedded-opentype'),
+    url(asset_path('lato-webfont.woff2')) format('woff2'),
+    url(asset_path('lato-webfont.woff')) format('woff'),
+    url(asset_path('lato-webfont.ttf')) format('truetype'),
+    url(asset_path('lato-webfont.svg#latoregular')) format('svg');
   font-style: normal;
   font-weight: normal;
-  text-rendering: optimizeLegibility;
 }
