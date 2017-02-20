@@ -1,9 +1,3 @@
-[submodule "_vendors/Font-Awesome"]
-	path = _vendors/Font-Awesome
-	url = https://github.com/FortAwesome/Font-Awesome.git
-[submodule "_vendors/bootstrap"]
-	path = _vendors/bootstrap
-	url = https://github.com/twbs/bootstrap.git
 [submodule "_vendors/jsonresume-theme-elegant"]
 	path = _vendors/jsonresume-theme-elegant
 	url = https://github.com/mudassir0909/jsonresume-theme-elegant.git

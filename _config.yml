@@ -20,10 +20,6 @@ assets:
     - _assets/images
     - _assets/javascripts
     - _assets/stylesheets
-    - _vendors/jquery-rails/vendor/assets/javascripts
-    - _vendors/Font-Awesome/css
-    - _vendors/Font-Awesome/fonts
-    - _vendors/bootstrap/dist/css
     - _vendors/jsonresume-theme-elegant/assets/css
   js_compressor: uglifier
   css_compressor: sass
