@@ -7,7 +7,7 @@ permalink: index.html
     <section class="col-md-3 card-wrapper profile-card-wrapper affix">
       <div class="card profile-card">
         <div class="profile-pic">
-          {% image avatar.jpeg class="media-object img-circle center-block" alt="Almir Sarajčić" style="width: 100px; height: 100px;" %}
+          <img src="{{ 'avatar.jpg' | asset_path }}" srcset="{{ 'avatar@2x.jpg' | asset_path }} 2x" class="media-object img-circle center-block" style="width: 100px; height: 100px;" alt="Almir Sarajčić">
         </div>
 
         <h3 class="text-center text-bolder name">Almir Sarajčić</h3>
