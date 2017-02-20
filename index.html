@@ -90,71 +90,63 @@ permalink: index.html
               </h4>
 
               <ul class="list-unstyled">
-                <li class="card card-nested clearfix">
-                  <div class="content has-sidebar">
-                    <p class="clear-margin-sm">
-                      <strong>Full Stack Developer</strong>, <a href="http://www.klika.ba">Klika</a>
-                    </p>
-                    <p class="text-muted visible-xs visible-sm">
-                      <small>
-                        <span class="space-right">
-                          Apr, 2015 - Present
-                        </span>
-                      </small>
-                    </p>
-                    <p>Klika is software development company offering outsourcing and consulting services. I'm working on client projects using Ruby on Rails and JavaScript.</p>
-                  </div>
+                {% for job in site.jobs %}
+                  <li class="card card-nested clearfix">
+                    <div class="content has-sidebar">
+                      <p class="clear-margin-sm">
+                        <strong>{{ job.job_title }}</strong>,
+                        {% if job.site_url %}
+                          <a href="{{ job.site_url }}">{{ job.company }}</a>
+                        {% else %}
+                          {{ job.company }}
+                        {% endif %}
+                      </p>
 
-                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                    <p>
-                      <strong>Joined:</strong>&nbsp;
-                      Apr, 2015
-                    </p>
-                    <p>
-                      Present
-                    </p>
-                  </div>
-                </li>
+                      <p class="text-muted visible-xs visible-sm">
+                        <small>
+                          <span class="space-right">
+                            {{ job.start }} -
+                            {% if job.end %}
+                              {{ job.end }}
+                            {% else %}
+                              Present
+                            {% endif %}
+                          </span>
 
-                <li class="card card-nested clearfix">
-                  <div class="content has-sidebar">
-                    <p class="clear-margin-sm">
-                      <strong>Full Stack Developer</strong>, Social Eddy
-                    </p>
-                    <p class="text-muted visible-xs visible-sm">
-                      <small>
-                        <span class="space-right">
-                          Sep, 2012 - Nov, 2013
-                        </span>
-                        <span>
+                          {% if job.duration %}
+                            <span>
+                              <i class="fa fa-clock-o icon-left"></i>
+                              {{ job.duration }}
+                            </span>
+                          {% endif %}
+                        </small>
+                      </p>
+
+                      {{ job.content }}
+                    </div>
+
+                    <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                      <p>
+                        <strong>Joined:</strong>&nbsp;
+                        {{ job.start }}
+                      </p>
+                      <p>
+                        {% if job.end %}
+                          <strong>Left:</strong>&nbsp;
+                          {{ job.end }}
+                        {% else %}
+                          Present
+                        {% endif %}
+                      </p>
+                      {% if job.duration %}
+                        <p>
                           <i class="fa fa-clock-o icon-left"></i>
-                          1 year 2 months
-                        </span>
-                      </small>
-                    </p>
-                    <p>Social Eddy was a content marketing tool that helped users manage social accounts and curate content. I was hired into remote team to help finishing the application created with PHP, MySQL and Javascript.</p>
-                    <ul>
-                      <li>Communication with 3rd-party APIs</li>
-                      <li>Analytics</li>
-                      <li>SQL queries optimization</li>
-                    </ul>
-                  </div>
-
-                  <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                    <p>
-                      <strong>Joined:</strong>&nbsp;
-                      Sep, 2012
-                    </p>
-                    <p>
-                      <strong>Left:</strong>&nbsp;
-                      Nov, 2013
-                    </p>
-                    <p>
-                      <i class="fa fa-clock-o icon-left"></i>
-                      1 year 2 months
-                    </p>
-                  </div>
-                </li>
+                          {{ job.duration }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  </li>
+                {% endfor %}
               </ul>
             </div>
           </div>

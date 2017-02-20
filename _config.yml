@@ -25,3 +25,5 @@ assets:
   css_compressor: sass
   gzip: false
   debug: false
+collections:
+  - jobs
