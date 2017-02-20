@@ -90,7 +90,8 @@ permalink: index.html
               </h4>
 
               <ul class="list-unstyled">
-                {% for job in site.jobs %}
+                {% assign sorted_jobs = (site.jobs | date_sort: 'start' | reverse) %}
+                {% for job in sorted_jobs %}
                   <li class="card card-nested clearfix">
                     <div class="content has-sidebar">
                       <p class="clear-margin-sm">
