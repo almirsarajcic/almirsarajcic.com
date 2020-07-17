@@ -45,7 +45,7 @@ googleAnalytics = "UA-286968-8"
 
     [[params.experience.list]]
     title = "Backend Developer"
-    dates = "Oct 2016 - Mar 2020"
+    dates = "Oct 2016 - Feb 2020"
     company = "Mukuru"
     details = "Mukuru is an African fintech startup founded in 2006. It helps with money transfer around Africa. I was part of a remote team from Sarajevo. We were working on implementing new features in PHP application using DDD and TDD, but also improving old code."
 
