@@ -3,3 +3,126 @@ languageCode = "en-us"
 title = "Almir Sarajčić"
 theme = "hugo-devresume-theme"
 googleAnalytics = "UA-286968-8"
+
+[params]
+  author = "Almir Sarajčić"
+  description = "Full stack developer"
+  primaryColor = "#54B689"
+  textPrimaryColor = "#292929"
+
+  [params.profile]
+    enable = true
+
+    name = "Almir Sarajcic"
+    tagline = "Senior Full Stack Software Developer"
+    avatar = "avatar.jpg"
+
+  [params.summary]
+    enable = true
+    text = "Senior full stack software developer having experience working in several industries: gaming, social media, real estate, finance, education, news etc. Technologies I’m familiar with range from backend languages, frameworks and runtimes Elixir, Ruby, PHP, Node.js, Phoenix and Ruby on Rails, databases PostgreSQL and MySQL and frontend tools React and vanilla JS. Other frontend technologies I’ve used include React Native, Ionic and Swift. I also have experience working with Docker and Kubernetes, nginx and Apache. For the deployment I’ve used Heroku, Render, AWS and Google Cloud. I write code in a TDD manner. I enjoy working in teams and I prefer small companies. I have experience working remotely in startups. I also work as a freelancer."
+
+  [params.contact]
+    enable = true
+    location = "Sarajevo"
+
+    [[params.contact.list]]
+    icon = "fas fa-envelope-square"
+    url = "mailto:#"
+    text = "almir.sarajcic@icloud.com"
+    [[params.contact.list]]
+    icon = "fas fa-globe"
+    url = "https://almirsarajcic.com"
+    text = "almirsarajcic.com"
+
+  [params.experience]
+    enable = true
+
+    [[params.experience.list]]
+    title = "Full Stack Developer"
+    dates = "Apr 2020 - Present"
+    company = "Lobbsta"
+    details = "Lobbsta is an online E-sports platform for professional Dota 2 players. It helps players find teams, book matches and analyze their game performance. I’m helping the team refactor backend and frontend code written in Elixir, Node.js and React and create new features."
+
+    [[params.experience.list]]
+    title = "Backend Developer"
+    dates = "Oct 2016 - Mar 2020"
+    company = "Mukuru"
+    details = "Mukuru is an African fintech startup founded in 2006. It helps with money transfer around Africa. I was part of a remote team from Sarajevo. We were working on implementing new features in PHP application using DDD and TDD, but also improving old code."
+
+    [[params.experience.list]]
+    title = "Full Stack Developer"
+    dates = "Apr 2015 - Oct 2016"
+    company = "Klika"
+    details = "Klika is a software development company offering outsourcing and consulting services. I was working on client projects using Ruby on Rails and JavaScript."
+
+    [[params.experience.list]]
+    title = "Full Stack Developer"
+    dates = "Sep 2012 - Nov 2013"
+    company = "Social Eddy"
+    details = "Social Eddy was a content marketing tool that helped users manage social accounts and curate content. I was hired into remote team to help finishing the application created with PHP, MySQL and Javascript."
+    [[params.experience.list.items]]
+    details = "Communication with 3rd-party APIs"
+    [[params.experience.list.items]]
+    details = "Analytics"
+    [[params.experience.list.items]]
+    details = "SQL queries optimization"
+
+  [params.skills]
+    enable = true
+
+    [[params.skills.list]]
+    title = "Backend"
+    [[params.skills.list.items]]
+    details = "Elixir"
+    [[params.skills.list.items]]
+    details = "Phoenix"
+    [[params.skills.list.items]]
+    details = "Ruby"
+    [[params.skills.list.items]]
+    details = "Ruby on Rails"
+    [[params.skills.list.items]]
+    details = "PHP"
+
+    [[params.skills.list]]
+    title = "Frontend"
+    [[params.skills.list.items]]
+    details = "JavaScript"
+    [[params.skills.list.items]]
+    details = "React"
+
+    [[params.skills.list]]
+    title = "DevOps"
+    [[params.skills.list.items]]
+    details = "Docker"
+    [[params.skills.list.items]]
+    details = "Kubernetes"
+    [[params.skills.list.items]]
+    details = "AWS"
+    [[params.skills.list.items]]
+    details = "Google Cloud"
+
+  [params.languages]
+    enable = true
+
+    [[params.languages.list]]
+    name = "Bosnian"
+    level = "Native"
+    [[params.languages.list]]
+    name = "English"
+    level = "Professional"
+
+  [params.social]
+    enable = true
+
+    [[params.social.list]]
+    icon = "fab fa-github"
+    url = "https://github.com/almirsarajcic"
+    title = "almirsarajcic"
+    [[params.social.list]]
+    icon = "fab fa-stack-overflow"
+    url = "https://stackoverflow.com/users/920303/almir-sarajčić"
+    title = "Almir Sarajčić"
+    [[params.social.list]]
+    icon = "fab fa-twitter"
+    url = "https://twitter.com/almirsarajcic"
+    title = "@almirsarajcic"
