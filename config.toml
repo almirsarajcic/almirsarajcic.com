@@ -116,7 +116,3 @@ googleAnalytics = "UA-286968-8"
     icon = "fab fa-stack-overflow"
     url = "https://stackoverflow.com/users/920303/almir-sarajčić"
     title = "Almir Sarajčić"
-    [[params.social.list]]
-    icon = "fab fa-twitter"
-    url = "https://twitter.com/almirsarajcic"
-    title = "@almirsarajcic"
