@@ -13,13 +13,13 @@ googleAnalytics = "UA-286968-8"
   [params.profile]
     enable = true
 
-    name = "Almir Sarajcic"
+    name = "Almir Sarajčić"
     tagline = "Senior Full Stack Software Developer"
     avatar = "avatar.jpg"
 
   [params.summary]
     enable = true
-    text = "Senior full stack software developer having experience working in several industries: gaming, social media, real estate, finance, education, news etc. Technologies I’m familiar with range from backend languages, frameworks and runtimes Elixir, Ruby, PHP, Node.js, Phoenix and Ruby on Rails, databases PostgreSQL and MySQL and frontend tools React and vanilla JS. Other frontend technologies I’ve used include React Native, Ionic and Swift. I also have experience working with Docker and Kubernetes, nginx and Apache. For the deployment I’ve used Heroku, Render, AWS and Google Cloud. I write code in a TDD manner. I enjoy working in teams and I prefer small companies. I have experience working remotely in startups. I also work as a freelancer."
+    text = "Senior full stack software developer having 8+ years of experience working in several industries: gaming, social media, real estate, finance, education, news etc. I’m proficient with Elixir, Ruby, Javascript and PHP, but other languages and technologies I’ve used include Phoenix Framework, Ruby on Rails, PostgreSQL, MySQL, Redis, Docker, Kubernetes, Node.js, React, React Native, Ionic, Swift, etc. You can hire me on [Upwork](https://www.upwork.com/fl/almirsarajcic)."
 
   [params.contact]
     enable = true
@@ -83,17 +83,6 @@ googleAnalytics = "UA-286968-8"
     details = "JavaScript"
     [[params.skills.list.items]]
     details = "React"
-
-    [[params.skills.list]]
-    title = "DevOps"
-    [[params.skills.list.items]]
-    details = "Docker"
-    [[params.skills.list.items]]
-    details = "Kubernetes"
-    [[params.skills.list.items]]
-    details = "AWS"
-    [[params.skills.list.items]]
-    details = "Google Cloud"
 
   [params.languages]
     enable = true
