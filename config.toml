@@ -38,12 +38,6 @@ googleAnalytics = "UA-286968-8"
     enable = true
 
     [[params.experience.list]]
-    title = "Full Stack Developer"
-    dates = "Apr 2020 - Present"
-    company = "Lobbsta"
-    details = "Lobbsta is an online E-sports platform for professional Dota 2 players. It helps players find teams, book matches and analyze their game performance. I’m helping the team refactor backend and frontend code written in Elixir, Node.js and React and create new features."
-
-    [[params.experience.list]]
     title = "Backend Developer"
     dates = "Oct 2016 - Feb 2020"
     company = "Mukuru"
