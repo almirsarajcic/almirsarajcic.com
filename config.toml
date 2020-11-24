@@ -19,7 +19,7 @@ googleAnalytics = "UA-286968-8"
 
   [params.summary]
     enable = true
-    text = "Senior full stack software developer having 8+ years of experience working in several industries: gaming, social media, real estate, finance, education, news etc. I’m proficient with Elixir, Ruby, Javascript and PHP, but other languages and technologies I’ve used include Phoenix Framework, Ruby on Rails, PostgreSQL, MySQL, Redis, Docker, Kubernetes, Node.js, React, React Native, Ionic, Swift, etc. You can hire me on [Upwork](https://www.upwork.com/fl/almirsarajcic)."
+    text = "Senior full stack software developer having 8+ years of experience working in several industries: gaming, social media, real estate, finance, education, news etc. I’m proficient with Elixir, Ruby, Javascript and PHP, but other languages and technologies I’ve used include Phoenix Framework, Ruby on Rails, PostgreSQL, MySQL, Redis, Docker, Kubernetes, Node.js, React, React Native, Ionic, Swift, etc. You can hire me on [Upwork](https://www.upwork.com/freelancers/~015918a2149ece4f14)."
 
   [params.contact]
     enable = true
