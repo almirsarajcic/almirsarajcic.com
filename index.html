@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Almir Sarajčić</title>
+<meta name="description" content="Software engineer. Tooling for AI coding agents. Elixir since 2017.">
+<link rel="canonical" href="https://almirsarajcic.com/">
+<meta property="og:title" content="Almir Sarajčić"><meta property="og:description" content="Tooling for AI coding agents. Elixir since 2017.">
+<meta name="twitter:card" content="summary"><meta name="twitter:creator" content="@ultrathinktrash">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Almir Sarajčić","url":"https://almirsarajcic.com/","jobTitle":"Software Engineer","email":"mailto:almir@optimum.ba","address":{"@type":"PostalAddress","addressCountry":"KE"},"sameAs":["https://github.com/almirsarajcic","https://x.com/ultrathinktrash","https://elixirdrops.net","https://stackoverflow.com/users/920303","https://hex.pm/users/almirsarajcic"]}
+</script>
+<style>
+:root{
+  --bg:#ecebe6; --rail:#e4e2dc; --ink:#121211; --soft:#4d4d4a; --dim:#8a8983;
+  --hair:#c8c6bf; --hard:#121211; --mark:#c8371d;
+  --s:"Helvetica Neue",Helvetica,Inter,Arial,ui-sans-serif,sans-serif;
+  --m:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121211;--rail:#191918;--ink:#eeece6;--soft:#aeaca5;--dim:#75736d;
+        --hair:#2c2b28;--hard:#eeece6;--mark:#ff6a4d}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--s);
+  letter-spacing:-.008em;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--mark)}
+
+.lay{display:grid;grid-template-columns:270px minmax(0,1fr)}
+
+/* ---- rail (from v6) ---- */
+.rail{background:var(--rail);border-right:1px solid var(--hair);padding:34px 26px 30px;
+  position:sticky;top:0;align-self:start;height:100vh;display:flex;flex-direction:column}
+.rail-foot{display:flex;flex:1;flex-direction:column}
+.rail .nm{margin:0;font-size:20px;font-weight:700;letter-spacing:-.028em;line-height:1.1}
+.rail .rl{margin:5px 0 0;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim)}
+.rail nav{margin:30px 0 auto;display:flex;flex-direction:column}
+.rail nav a{padding:8px 0;border-top:1px solid var(--hair);
+  font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--soft)}
+.rail nav a:last-child{border-bottom:1px solid var(--hair)}
+.rail nav a:hover{color:var(--mark)}
+.spec{margin:0 0 20px;font:11px/2 var(--m);letter-spacing:.03em;color:var(--dim)}
+.spec b{display:block;color:var(--soft);font-weight:400}
+.avail{align-self:flex-start;padding:9px 14px;background:var(--hard);color:var(--bg);
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
+.avail:hover{background:var(--mark);color:#fff}
+.soc{margin-top:16px;display:flex;flex-wrap:wrap;gap:4px 16px;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+
+/* ---- main (from v7) ---- */
+main{padding:0 46px 90px;max-width:1000px}
+.hero{padding:70px 0 54px;border-bottom:1px solid var(--hair)}
+.hero h1{margin:0;font-size:clamp(38px,5.6vw,74px);line-height:.95;letter-spacing:-.045em;
+  font-weight:700;max-width:14ch}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px;margin-top:38px}
+.two .a{font-size:18px;line-height:1.42;letter-spacing:-.016em}
+.two .b{font-size:15px;line-height:1.62;color:var(--soft)}
+.two p{margin:0}
+
+.sec{padding:48px 0 0}
+.sec h2{margin:0 0 22px;font-size:11.5px;font-weight:400;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--dim)}
+
+.it{display:grid;grid-template-columns:minmax(0,270px) minmax(0,1fr);gap:34px;
+  padding:19px 0;border-top:1px solid var(--hair)}
+.it h3{margin:0;font-size:25px;line-height:1.05;letter-spacing:-.034em;font-weight:700}
+.it .u{display:block;margin-top:6px;font:10.5px/1.5 var(--m);letter-spacing:.09em;
+  text-transform:uppercase;color:var(--dim)}
+.it p{margin:0;color:var(--soft);font-size:15.5px;line-height:1.6}
+
+.rows{margin:0;padding:0;list-style:none}
+.rows li{display:grid;grid-template-columns:minmax(0,270px) minmax(0,1fr);gap:34px;
+  padding:12px 0;border-top:1px solid var(--hair)}
+.rows .k{font-size:15px;font-weight:600;letter-spacing:-.014em}
+.rows .v{color:var(--soft);font-size:15px;line-height:1.55}
+
+.tl{margin:0;padding:0;list-style:none}
+.tl li{display:grid;grid-template-columns:88px minmax(0,178px) minmax(0,1fr);gap:24px;
+  padding:17px 0;border-top:1px solid var(--hair)}
+.tl time{font:10.5px/1.9 var(--m);letter-spacing:.07em;color:var(--dim)}
+.tl .n{font-size:19px;font-weight:700;letter-spacing:-.028em;line-height:1.15}
+.tl p{margin:0;color:var(--soft);font-size:15px;line-height:1.55}
+
+.cta{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px;
+  margin-top:56px;padding-top:24px;border-top:2px solid var(--hard);align-items:start}
+.cta h3{margin:0;font-size:clamp(25px,3.2vw,38px);line-height:1.02;letter-spacing:-.038em;font-weight:700}
+.cta p{margin:0;color:var(--soft);font-size:15px;line-height:1.58}
+.cta .em{display:inline-block;margin-top:14px;font-size:11.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--mark)}
+
+@media (max-width:940px){
+  .lay{display:flex;flex-direction:column}
+  .rail{display:contents}
+  .rail-head{order:1;background:var(--rail);border-bottom:1px solid var(--hair);padding:24px 20px}
+  .rail-foot{order:3;flex:none;background:var(--rail);border-top:1px solid var(--hair);padding:28px 20px 32px}
+  .rail nav{flex-direction:row;flex-wrap:wrap;gap:0 22px;margin:0 0 24px}
+  .rail nav a{border:0}
+  .rail nav a:last-child{border:0}
+  main{order:2;max-width:none;padding:0 20px 64px}
+  .hero{padding:40px 0 34px}
+  .two{grid-template-columns:1fr;gap:18px;margin-top:26px}
+  .it,.rows li{grid-template-columns:1fr;gap:7px}
+  .tl li{grid-template-columns:1fr;gap:4px}
+  .cta{grid-template-columns:1fr;gap:18px}
+}
+</style>
+</head>
+<body>
+<div class="lay">
+
+<aside class="rail">
+  <div class="rail-head">
+    <p class="nm">Almir Sarajčić</p>
+    <p class="rl">Software engineer</p>
+  </div>
+  <div class="rail-foot">
+    <nav>
+      <a href="#building">Building</a>
+      <a href="#oss">Open source</a>
+      <a href="#history">History</a>
+      <a href="/Almir_Sarajcic_CV.pdf">CV ↗</a>
+    </nav>
+    <div class="spec">
+      <b>Kenya · UTC+3</b>
+      <b>Elixir since 2017</b>
+      <b>Bosnian · English</b>
+    </div>
+    <a class="avail" href="mailto:almir@optimum.ba">Available Sep 2026</a>
+    <div class="soc">
+      <a href="mailto:almir@optimum.ba">Email</a>
+      <a href="https://github.com/almirsarajcic">GitHub</a>
+      <a href="https://x.com/ultrathinktrash">X</a>
+      <a href="https://www.linkedin.com/in/almir-sarajčić-8911b4429">LinkedIn</a>
+    </div>
+  </div>
+</aside>
+
+<main>
+  <div class="hero">
+    <h1>I build coding-agent tooling in Elixir.</h1>
+    <div class="two">
+      <p class="a">My current work is about making coding agents useful on real codebases: give them a plan, limit the ways they can go wrong, and check the result.</p>
+      <p class="b">I started writing software in 2012 and moved to Elixir in 2017. Before agents, I spent years working on CI, static analysis, and test infrastructure. I now use the same machinery to catch what agents get wrong. Models are good at producing plausible code; the surrounding system has to decide whether it belongs in production.</p>
+    </div>
+  </div>
+
+  <div class="sec" id="building">
+    <h2>Building</h2>
+    <div class="it">
+      <div><h3><a href="https://github.com/KogenAI/kogen">Kogen</a></h3><span class="u">KogenAI/kogen</span></div>
+      <p>An Elixir framework for coding agents. You shape the feature and decide what done looks like. Kogen takes it from there: implementation, testing, review, and rework happen without a human in the loop. It finishes with a checked result or a clear reason it stopped.</p>
+    </div>
+    <div class="it">
+      <div><h3><a href="https://combobulate.dev">Combobulate</a></h3><span class="u">combobulate.dev</span></div>
+      <p>Send it a Telegram message and it builds a website, deploys it, and connects a domain. I built the whole product with Kogen to see how the tooling held up outside a demo.</p>
+    </div>
+    <div class="it">
+      <div><h3><a href="https://elixirdrops.net">ElixirDrops</a></h3><span class="u">elixirdrops.net</span></div>
+      <p>A community-driven publishing platform for short notes on Elixir and Phoenix.</p>
+    </div>
+    <div class="it">
+      <div><h3><a href="https://skeptic.bot">Skeptic.bot</a></h3><span class="u">skeptic.bot</span></div>
+      <p>A podcast research assistant built with Elixir and Phoenix LiveView. It turns long episodes into something you can search instead of scrub through.</p>
+    </div>
+  </div>
+
+  <div class="sec" id="oss">
+    <h2>Open source</h2>
+    <ul class="rows">
+      <li><span class="k"><a href="https://phx.tools">phx.tools</a></span><span class="v">Sets up an Elixir and Phoenix development environment on Linux or macOS with one command.</span></li>
+      <li><span class="k"><a href="https://hex.pm/packages/github_workflows_generator">github_workflows_generator</a></span><span class="v">Define GitHub Actions workflows in Elixir and generate the YAML.</span></li>
+      <li><span class="k"><a href="https://hex.pm/packages/optimum_credo">optimum_credo</a></span><span class="v">The Credo checks we wanted on our own projects, covering readability, test assertions, and LiveView patterns.</span></li>
+      <li><span class="k"><a href="https://optimum.ba/blog/elixir-devops-series/">Elixir DevOps series</a></span><span class="v">Six articles on the CI/CD work that usually gets skipped: caching, release tests, preview apps, deployments, and generated infrastructure.</span></li>
+    </ul>
+  </div>
+
+  <div class="sec" id="history">
+    <h2>History</h2>
+    <ul class="tl">
+      <li><time>2022–26</time><span class="n">Optimum</span><p>I ran an Elixir and Phoenix agency and later moved it toward developer tooling. I handled technical direction and CI/CD, reviewed code, and trained the team. Every developer I mentored went on to another engineering role.</p></li>
+      <li><time>2020–24</time><span class="n">StoryDeck</span><p>I joined to build a proof of concept, took it through MVP and into production, then stayed as co-founder and technical lead.</p></li>
+      <li><time>2019–</time><span class="n">Contract work</span><p>Twenty-one contracts and more than 4,500 hours. The work included WPA3 support for Nerves on a Raspberry Pi 4, real-time IoT analytics, an esports matchmaking backend, and replacing a legacy PHP service with Elixir services.</p></li>
+      <li><time>2012–20</time><span class="n">Earlier</span><p>I worked on the backend at Mukuru, a pan-African remittances company, mostly in PHP with domain-driven design and plenty of legacy code. Before that I was full-stack at Klika and Social Eddy.</p></li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <h3>Available from September 2026.</h3>
+    <div>
+      <p>I'm looking for a remote full-time role or contract. Coding agents and developer tools are the obvious fit, especially if Elixir is involved. I'm also interested in product and platform work where the technical problem is genuinely difficult.</p>
+      <a class="em" href="mailto:almir@optimum.ba">almir@optimum.ba →</a>
+    </div>
+  </div>
+</main>
+
+</div>
+</body>
+</html>
