@@ -3,7 +3,6 @@ name: Verify site
 on:
   pull_request:
   push:
-    branches: [master]
 
 permissions:
   contents: read
