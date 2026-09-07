@@ -14,7 +14,7 @@ Source for Almir Sarajčić’s public portfolio and career website. The approve
 
 ## Current state
 
-The Astro migration preserves the approved content, layout, responsive behavior, dark theme, metadata, Plausible analytics, CV URL, and canonical apex domain. Cloudflare Pages is the selected production host. Pushes to `master` deploy through Cloudflare’s GitHub integration; branch previews are disabled.
+The 7 September redesign uses IBM Plex typography, aligned project rows and a compact masthead. Almir accepted publication of the website and full two-page CV. Responsive behavior, dark theme, metadata, Plausible analytics, CV URL, and canonical apex domain are retained. Cloudflare Pages is the selected production host. Pushes to `master` deploy through Cloudflare’s GitHub integration; branch previews are disabled.
 
 ## Folder map
 
@@ -27,4 +27,8 @@ Career copy and the canonical application CV are maintained in the adjacent JobH
 
 ## Design proposal
 
-This isolated worktree contains the [7 September redesign proposal](docs/design-proposal.md). It has not been promoted to production. The existing JobHunt career-review Sites project hosts the private proposal and redesigned CV; production remains on Cloudflare Pages.
+The [7 September design record](docs/design-proposal.md) records the accepted design. The existing JobHunt career-review Sites project retains the private review; production uses Cloudflare Pages.
+
+## Font and performance maintenance
+
+Licensed full font masters are in `assets/font-sources/`. `scripts/subset-fonts.py` derives Latin/Latin Extended webfonts into `src/assets/fonts/`; run it with Python and fontTools only when font sources or required writing systems change. The normal npm build needs no Python. Astro emits hashed font URLs and minified inline CSS; `public/_headers` gives hashed assets immutable caching. Font licenses accompany both source and public output. Keep Bosnian diacritics, punctuation and arrows in any future subset. The minimal A favicon is owned by `public/favicon.svg`; no separate social card is generated.

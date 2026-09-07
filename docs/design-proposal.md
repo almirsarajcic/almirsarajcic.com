@@ -1,6 +1,6 @@
 # Personal website redesign proposal
 
-7 September 2026. A trial requested by Almir, not approved production branding.
+7 September 2026. Accepted for website and CV publication by Almir after private review. The initial trial and provenance below are retained as design history.
 
 ## Visual thesis
 
@@ -16,8 +16,8 @@ The website designer received only Almir's own source and Kogen references. A se
 | Page and content hierarchy | `src/pages/index.astro` |
 | Personal visual tokens / reusable CSS | `src/styles/site.css` |
 | Metadata, canonical, structured data and domain-gated analytics | `src/layouts/Base.astro` |
-| Font masters used in this site | `public/fonts/IBMPlex*.woff2`; license alongside as `IBMPlex-OFL-LICENSE.txt` |
-| Website CV | `public/Almir_Sarajcic_CV.pdf` retains the current canonical application PDF; the private review separately substitutes the proposed PDF |
+| Font masters used in this site | `assets/font-sources/IBMPlex*.woff2`; subset source in `src/assets/fonts/`, derived by `scripts/subset-fonts.py`; bundled license and `public/font-license.txt` |
+| Website CV | `public/Almir_Sarajcic_CV.pdf` is the accepted IBM Plex CV, identical to JobHunt’s canonical application PDF |
 | Private review integration | JobHunt `scripts/prepare-redesign-review.py` → existing career-review Sites project; no Sites identity in this production worktree |
 
 Light tokens: paper #f2f0ea, ink #15140f, secondary #55524a, metadata #6b675e. Dark tokens: paper #14130f, ink #eeebe2, secondary #a8a496, metadata #928e81. Sienna accent is reserved for interactions. IBM Plex Sans carries headings/body; Mono carries metadata. Body is 16.5–18px; metadata/navigation is 14px. The spacing rhythm uses 8, 16, 24, 32, 48, 64 and 96px. Text enlargement can wrap long project names and email addresses. These are proposals owned by this stylesheet, not new accepted career rules.
@@ -34,3 +34,5 @@ Light tokens: paper #f2f0ea, ink #15140f, secondary #55524a, metadata #6b675e. D
 ## Refresh and promotion
 
 Read repository README and `docs/deployment.md`. Run checks and build after source edits. The private redesign workflow in JobHunt owns rebasing assets and proposed PDF links. Do not copy preview-only metadata into production. After design acceptance, reconcile changes since base `bc144e4`, promote this branch through the production procedure, deliberately select/archive the canonical CV, and verify the live Cloudflare Pages website and PDF checksum. Until then, this worktree is the editable proposal; `master` and the public application PDF retain their approved state.
+
+Publication preparation: minified inline CSS, Latin font subsets with original licensed masters retained, hashed asset caching, and the original A favicon were added after the initial Lighthouse audit. Current production sources are the main checkout; the original isolated branch is historical evidence. JobHunt’s publication receipt owns live measurements and checks.

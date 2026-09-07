@@ -1,5 +1,7 @@
 ---
-import css from "../styles/site.css?raw";
+import "../styles/site.css";
+import regularFont from "../assets/fonts/IBMPlexSans-Regular.woff2?url";
+import boldFont from "../assets/fonts/IBMPlexSans-SemiBold.woff2?url";
 
 interface Props {
   title?: string;
@@ -49,17 +51,17 @@ const person = {
       rel="preload"
       as="font"
       type="font/woff2"
-      href="/fonts/IBMPlexSans-Regular.woff2"
+      href={regularFont}
       crossorigin
     />
     <link
       rel="preload"
       as="font"
       type="font/woff2"
-      href="/fonts/IBMPlexSans-SemiBold.woff2"
+      href={boldFont}
       crossorigin
     />
-    <style is:inline set:html={css}></style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script
       is:inline
       type="application/ld+json"
