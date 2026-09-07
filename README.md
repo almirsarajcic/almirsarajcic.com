@@ -10,11 +10,11 @@ Source for Almir Sarajčić’s public portfolio and career website. The approve
 | Replace the downloadable CV | [`public/Almir_Sarajcic_CV.pdf`](public/Almir_Sarajcic_CV.pdf) |
 | Preview locally | Run `npm install`, then `npm run dev` |
 | Verify a production build | Run `npm run check` and `npm run build` |
-| Publish or change domains | [Cloudflare Pages deployment](docs/deployment.md) |
+| Publish or change domains | [Cloudflare Pages workflow](docs/deployment.md) |
 
 ## Current state
 
-The Astro migration preserves the approved content, layout, responsive behavior, dark theme, metadata, Plausible analytics, CV URL, and canonical apex domain. Cloudflare Pages is the selected production host. The previous GitHub Pages-specific files were retired during the migration.
+The Astro migration preserves the approved content, layout, responsive behavior, dark theme, metadata, Plausible analytics, CV URL, and canonical apex domain. Cloudflare Pages is the selected production host. Pushes to `master` deploy through Cloudflare’s GitHub integration; branch previews are disabled.
 
 ## Folder map
 

@@ -24,12 +24,11 @@ Inputs: an approved source revision, the current canonical CV, access to the Git
 1. Start in this repository and make sure the intended source revision is checked out.
 2. Run `npm install`, `npm run check`, and `npm run build`.
 3. Confirm `dist/index.html` exists and `dist/Almir_Sarajcic_CV.pdf` matches `public/Almir_Sarajcic_CV.pdf`.
-4. Push the change through GitHub. The repository’s `Verify site` workflow checks every pull request and every push to `master`.
-5. In Cloudflare Pages, use the existing project for this repository. For first-time setup, connect the GitHub repository, enable automatic deployments, select Astro, set the production branch to `master`, the build command to `npm run build`, and the output directory to `dist`. Cloudflare reads the pinned Node version from `.node-version`.
-6. Keep Cloudflare preview deployments enabled for non-production branches. Pull requests should receive an isolated `*.pages.dev` preview; only `master` may update production.
-7. Deploy the checked revision. Do not create a second Pages project to work around a failed build; inspect and resume the existing project.
-8. Add `almirsarajcic.com` as the production custom domain in the Pages project. Add `www.almirsarajcic.com` to Cloudflare and configure a zone-level permanent redirect to the same path and query string on `https://almirsarajcic.com`.
-9. Only after Cloudflare reports the domain active, retire the old GitHub Pages custom-domain configuration. Leave the last verified site serving until the Cloudflare deployment and certificate are ready.
+4. In Cloudflare Pages, use the existing project for this repository. For first-time setup, connect the GitHub repository, select Astro, set the production branch to `master`, the build command to `npm run build`, and the output directory to `dist`. Cloudflare reads the pinned Node version from `.node-version`.
+5. Enable automatic production deployments from `master` and set Preview branch deployments to **None**.
+6. Push the checked revision to `master`. Cloudflare builds and deploys it automatically. Do not create a second Pages project or a separate GitHub Actions deployment.
+7. Add `almirsarajcic.com` as the production custom domain in the Pages project. Add `www.almirsarajcic.com` to Cloudflare and configure a zone-level permanent redirect to the same path and query string on `https://almirsarajcic.com`.
+8. Only after Cloudflare reports the domain active, retire the old GitHub Pages custom-domain configuration. Leave the last verified site serving until the Cloudflare deployment and certificate are ready.
 
 ## Checks
 
