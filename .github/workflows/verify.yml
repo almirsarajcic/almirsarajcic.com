@@ -1,6 +1,7 @@
 name: Verify site
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
 
