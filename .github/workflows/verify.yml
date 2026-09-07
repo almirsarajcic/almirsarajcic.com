@@ -1,0 +1,38 @@
+name: Verify site
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check Astro project
+        run: npm run check
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Confirm expected output
+        run: test -f dist/index.html && cmp public/Almir_Sarajcic_CV.pdf dist/Almir_Sarajcic_CV.pdf
