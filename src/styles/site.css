@@ -1,0 +1,304 @@
+/* almirsarajcic.com — redesign proposal, 7 September 2026.
+   Typography: IBM Plex Sans / IBM Plex Mono (OFL, bundled in /fonts).
+   Shares Kogen's typeface and ink discipline; palette and layout are Almir's own. */
+
+@font-face{font-family:Plex;src:url('/fonts/IBMPlexSans-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Plex;src:url('/fonts/IBMPlexSans-Italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:Plex;src:url('/fonts/IBMPlexSans-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:Plex;src:url('/fonts/IBMPlexSans-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:PlexMono;src:url('/fonts/IBMPlexMono-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+
+/* ---- tokens ---------------------------------------------------------- */
+
+:root{
+  color-scheme:light dark;
+
+  /* Warm paper and ink. Light values carry the personal identity; the dark
+     pair is the same paper read at night, not a separate theme. */
+  --paper:#f2f0ea;
+  --raise:#e9e6de;
+  --ink:#15140f;
+  --muted:#55524a;
+  --faint:#6b675e;           /* AA on both --paper and --raise at small sizes */
+  --rule:#d3cfc4;
+  --rule-strong:#15140f;
+  --accent:#8a4b1f;          /* burnt sienna: signature, used sparingly */
+  --accent-ink:#f2f0ea;
+  --focus:#15140f;
+
+  --sans:Plex,ui-sans-serif,system-ui,Arial,sans-serif;
+  --mono:PlexMono,ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  /* 8px rhythm, matching the Kogen layout scale */
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px; --s7:96px;
+
+  --measure:66ch;
+  --gutter:clamp(24px,5vw,64px);
+  --page:1180px;
+}
+
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#14130f;
+    --raise:#1c1b16;
+    --ink:#eeebe2;
+    --muted:#a8a496;
+    --faint:#928e81;
+    --rule:#312f28;
+    --rule-strong:#eeebe2;
+    --accent:#e0885a;
+    --accent-ink:#14130f;
+    --focus:#eeebe2;
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{
+  -webkit-text-size-adjust:100%;
+  scroll-behavior:smooth;
+  scroll-padding-top:var(--s5);
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  /* Fluid body copy: 16.5px at 360px up to 18px past 900px. */
+  font-size:clamp(1.03rem,0.96rem + 0.32vw,1.125rem);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+h1,h2,h3{margin:0;font-weight:600;line-height:1.12;letter-spacing:-0.022em}
+p{margin:0;overflow-wrap:break-word}
+ul,ol{margin:0;padding:0;list-style:none}
+
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
+a:hover{text-decoration-thickness:2px;color:var(--accent)}
+a:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+
+::selection{background:var(--accent);color:var(--accent-ink)}
+
+.skip{
+  position:absolute;left:var(--gutter);top:-120px;z-index:20;
+  background:var(--ink);color:var(--paper);
+  padding:12px 20px;text-decoration:none;
+}
+.skip:focus{top:12px;color:var(--paper)}
+
+.wrap{width:min(var(--page),100% - var(--gutter)*2);margin-inline:auto}
+
+/* Small monospaced label used for eyebrows, dates and ordinals. */
+.label{
+  font-family:var(--mono);
+  font-size:0.875rem;
+  line-height:1.5;
+  letter-spacing:0.04em;
+  color:var(--faint);
+  font-variant-numeric:tabular-nums;
+}
+
+/* ---- masthead --------------------------------------------------------- */
+
+.masthead{
+  display:flex;flex-wrap:wrap;align-items:baseline;
+  gap:var(--s2) var(--s5);
+  padding-block:var(--s4) var(--s3);
+  border-bottom:1px solid var(--rule);
+}
+.masthead .who{display:flex;flex-direction:column;gap:2px;margin-right:auto}
+.masthead .name{font-size:1.0625rem;font-weight:600;letter-spacing:-0.012em;text-decoration:none}
+.masthead nav{display:flex;flex-wrap:wrap;gap:var(--s3)}
+.masthead nav a{
+  font-family:var(--mono);font-size:0.875rem;letter-spacing:0.04em;
+  text-decoration:none;color:var(--muted);
+  padding-block:var(--s1);
+}
+.masthead nav a:hover{color:var(--accent);text-decoration:underline}
+
+/* ---- opening ---------------------------------------------------------- */
+
+.opening{padding-block:clamp(var(--s6),9vw,120px) var(--s6)}
+
+.opening h1{
+  /* 34px small screens → 68px wide, wrapping at a controlled measure. */
+  font-size:clamp(2.125rem,1.35rem + 3.4vw,4.25rem);
+  letter-spacing:-0.032em;
+  line-height:1.04;
+  max-width:19ch;
+  text-wrap:balance;
+}
+
+.opening .lede{
+  margin-top:var(--s4);
+  font-size:clamp(1.15rem,1.02rem + 0.55vw,1.375rem);
+  line-height:1.5;
+  max-width:54ch;
+  letter-spacing:-0.008em;
+}
+
+.opening .body{margin-top:var(--s3);color:var(--muted);max-width:var(--measure)}
+
+.facts{
+  display:flex;flex-wrap:wrap;gap:var(--s1) var(--s4);
+  margin-top:var(--s5);padding-top:var(--s3);
+  border-top:1px solid var(--rule);
+}
+.facts li{font-family:var(--mono);font-size:0.875rem;letter-spacing:0.04em;color:var(--faint)}
+.facts b{font-weight:400;color:var(--muted)}
+
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3);margin-top:var(--s4)}
+.button{
+  display:inline-flex;align-items:center;min-height:48px;
+  padding:12px 22px;border:1px solid var(--ink);border-radius:3px;
+  background:var(--ink);color:var(--paper);
+  font-weight:500;text-decoration:none;
+}
+.button:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.textlink{
+  font-family:var(--mono);font-size:0.875rem;letter-spacing:0.03em;
+  padding-block:var(--s1);
+}
+
+/* ---- register: the recurring two-column section form ------------------ */
+
+.section{
+  padding-block:var(--s6);
+  border-top:1px solid var(--rule-strong);
+}
+/* The head shares the entry grid so the heading sits over the ordinal +
+   name columns and its description starts on the description column. */
+.section > .head{
+  display:grid;
+  grid-template-columns:4ch minmax(0,22ch) minmax(0,1fr);
+  gap:var(--s3) var(--s5);
+  margin-bottom:var(--s4);
+  align-items:baseline;
+}
+.section > .head h2{grid-column:1 / 3}
+.section h2{font-size:clamp(1.5rem,1.2rem + 1.1vw,2rem)}
+.section .head p{color:var(--muted);font-size:1rem;max-width:var(--measure)}
+
+/* Entries are rows in a register, not cards. The ordinal is the spine. */
+.entry{
+  display:grid;
+  grid-template-columns:4ch minmax(0,22ch) minmax(0,1fr);
+  gap:var(--s2) var(--s5);
+  padding-block:var(--s4);
+  border-top:1px solid var(--rule);
+  align-items:start;
+}
+/* No closing rule: the next section's strong rule already closes the list. */
+.entry > .no{
+  font-family:var(--mono);font-size:0.875rem;line-height:1.7;
+  color:var(--faint);font-variant-numeric:tabular-nums;
+}
+.entry h3{font-size:clamp(1.25rem,1.1rem + 0.6vw,1.5rem)}
+.entry h3 a{text-decoration:none}
+.entry h3 a:hover{text-decoration:underline}
+.entry .meta{display:block;margin-top:var(--s1)}
+.entry .say{color:var(--muted);max-width:var(--measure)}
+.entry .say + .textlink{display:inline-block;margin-top:var(--s2)}
+
+/* Compact register rows (open source) drop the large heading. */
+.entry.tight{padding-block:var(--s3)}
+.entry.tight .key{font-weight:500;letter-spacing:-0.008em;overflow-wrap:anywhere}
+.entry.tight .key a{text-decoration-color:var(--rule)}
+
+/* History uses a date column in place of the name column. */
+.entry.event > .when{font-family:var(--mono);font-size:0.875rem;line-height:1.7;color:var(--faint);font-variant-numeric:tabular-nums}
+.entry.event{grid-template-columns:4ch minmax(0,11ch) minmax(0,1fr)}
+.entry.event .name{font-size:1.125rem;font-weight:600;letter-spacing:-0.014em;display:block;margin-bottom:var(--s1)}
+
+/* ---- consulting: the one raised surface on the page ------------------- */
+
+.consulting{
+  border-top:1px solid var(--rule-strong);
+  padding-block:var(--s6);
+}
+.consulting .panel{
+  background:var(--raise);
+  padding:clamp(var(--s4),4vw,var(--s5));
+  display:grid;
+  grid-template-columns:minmax(0,26ch) minmax(0,1fr);
+  gap:var(--s3) var(--s6);
+  align-items:start;
+}
+.consulting h2{font-size:clamp(1.5rem,1.2rem + 1.1vw,2rem)}
+.consulting p{color:var(--muted);max-width:var(--measure)}
+.consulting .textlink{display:inline-block;margin-top:var(--s3);color:var(--ink)}
+
+/* ---- closing and footer ---------------------------------------------- */
+
+.closing{
+  border-top:1px solid var(--rule-strong);
+  padding-block:var(--s6);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--s4) var(--s6);
+  align-items:start;
+}
+.closing h2{font-size:clamp(1.875rem,1.4rem + 2vw,3rem);letter-spacing:-0.03em;max-width:12ch}
+.closing p{color:var(--muted);max-width:52ch}
+.closing .mail{
+  display:inline-block;margin-top:var(--s3);
+  font-size:clamp(1.0625rem,1rem + 0.4vw,1.25rem);
+  color:var(--accent);text-underline-offset:6px;
+}
+
+.site-foot{
+  border-top:1px solid var(--rule);
+  padding-block:var(--s4) var(--s6);
+  display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);
+  align-items:baseline;
+}
+.site-foot ul{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3)}
+.site-foot a{
+  font-family:var(--mono);font-size:0.875rem;letter-spacing:0.04em;
+  color:var(--muted);text-decoration:none;padding-block:var(--s1);
+}
+.site-foot a:hover{color:var(--accent);text-decoration:underline}
+.site-foot .colophon{margin-left:auto;color:var(--faint)}
+
+/* ---- responsive ------------------------------------------------------- */
+
+@media (max-width:900px){
+  .section > .head,
+  .consulting .panel{grid-template-columns:1fr;gap:var(--s2)}
+  .closing{grid-template-columns:1fr;gap:var(--s2)}
+  .entry,
+  .entry.event{grid-template-columns:4ch minmax(0,1fr);gap:var(--s1) var(--s3)}
+  .entry > .no{grid-row:span 2}
+  .section{padding-block:var(--s5)}
+  .opening{padding-block:var(--s5)}
+  .entry .meta{margin-top:2px}
+}
+
+@media (max-width:560px){
+  .masthead{padding-block:var(--s3) var(--s2);gap:var(--s2) var(--s3)}
+  .masthead nav{gap:var(--s2) var(--s3)}
+  .masthead .who{margin-right:0;width:100%}
+  .entry,
+  .entry.event{grid-template-columns:1fr}
+  .entry > .no{grid-row:auto}
+  .site-foot .colophon{margin-left:0;width:100%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:0.01ms !important;transition-duration:0.01ms !important}
+}
+
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .masthead nav,.skip,.actions .button{display:none}
+  .section,.consulting,.closing{padding-block:18pt}
+  a{text-decoration:none}
+}
+
+/* Let text enlarge without forcing flex/grid children beyond the page. */
+.entry > *, .who, .masthead nav {min-width:0}
+.closing .mail {overflow-wrap:anywhere;max-width:100%}

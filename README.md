@@ -24,3 +24,7 @@ The Astro migration preserves the approved content, layout, responsive behavior,
 - `dist/` — generated production output; not committed.
 
 Career copy and the canonical application CV are maintained in the adjacent JobHunt workspace. Update those owners first when facts or positioning change, then synchronize this repository and verify the public result.
+
+## Design proposal
+
+This isolated worktree contains the [7 September redesign proposal](docs/design-proposal.md). It has not been promoted to production. The existing JobHunt career-review Sites project hosts the private proposal and redesigned CV; production remains on Cloudflare Pages.

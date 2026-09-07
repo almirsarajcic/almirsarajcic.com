@@ -1,0 +1,96 @@
+---
+import css from "../styles/site.css?raw";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Almir Sarajčić",
+  description = "Senior software engineer working on Elixir/Phoenix, developer infrastructure, and AI-assisted development workflows. Building Kogen.",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, "https://almirsarajcic.com").href;
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Almir Sarajčić",
+  url: "https://almirsarajcic.com/",
+  jobTitle: "Senior Software Engineer",
+  email: "mailto:almir@optimum.ba",
+  address: { "@type": "PostalAddress", addressCountry: "KE" },
+  sameAs: [
+    "https://github.com/almirsarajcic",
+    "https://x.com/ultrathinktrash",
+    "https://elixirdrops.net",
+    "https://stackoverflow.com/users/920303",
+    "https://hex.pm/users/almirsarajcic",
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@ultrathinktrash" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/IBMPlexSans-Regular.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/IBMPlexSans-SemiBold.woff2"
+      crossorigin
+    />
+    <style is:inline set:html={css}></style>
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(person)}
+    />
+    <!-- Privacy-friendly analytics by Plausible; loaded on the production host only. -->
+    <script is:inline id="site-analytics">
+      if (
+        location.hostname === "almirsarajcic.com" ||
+        location.hostname === "www.almirsarajcic.com"
+      ) {
+        window.plausible =
+          window.plausible ||
+          function () {
+            (window.plausible.q = window.plausible.q || []).push(arguments);
+          };
+        window.plausible.init =
+          window.plausible.init ||
+          function (i) {
+            window.plausible.o = i || {};
+          };
+        window.plausible.init();
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://plausible.io/js/pa-A5MB5OkBYFQH-mJTI8D5n.js";
+        document.head.appendChild(s);
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <slot />
+  </body>
+</html>
