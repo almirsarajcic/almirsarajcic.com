@@ -1,43 +1,46 @@
 ---
 import Base from "../layouts/Base.astro";
 
-/* Content lives here as data so copy stays editable in one place.
-   Facts and destinations are preserved from the approved career copy;
-   change them in the JobHunt career sources first, then synchronize. */
+/* Local review candidate. Copy and fact audit are maintained in the Optimum
+   public-presence-approval-2026-09-28 packet; publication remains held. */
 
 const building = [
   {
     name: "Kogen",
     href: "https://kogen.dev",
-    meta: "Open-source development preview",
-    say: "I'm developing Kogen, a software-building system designed to turn a shaped feature into an accepted commit through implementation, checks, independent review, and rework.",
+    meta: "kogen.dev",
+    say: "A software-building system designed around feature shaping, implementation, checks and independent review.",
     link: { label: "View source", href: "https://github.com/KogenAI/kogen" },
   },
   {
     name: "Combobulate",
     href: "https://combobulate.dev",
     meta: "combobulate.dev",
-    say: "A website-building product designed around a conversation in Telegram, with deployment and domain setup in the same workflow.",
+    say: "Build and publish static websites and Vite apps through Telegram.",
   },
   {
     name: "ElixirDrops",
     href: "https://elixirdrops.net",
     meta: "elixirdrops.net",
-    say: "A community-driven publishing platform for short notes on Elixir and Phoenix.",
+    say: "A platform for publishing and discovering practical Elixir and Phoenix tips.",
+    link: { label: "View source", href: "https://github.com/optimumBA/elixir_drops" },
   },
   {
     name: "Skeptic.bot",
     href: "https://skeptic.bot",
     meta: "skeptic.bot",
-    say: "A podcast research assistant built with Elixir and Phoenix LiveView. It turns long episodes into something you can search instead of scrub through.",
+    say: "Search conspiracy and alternative podcasts, ask questions, and find the episodes behind the answers.",
+    link: { label: "View source", href: "https://github.com/optimumBA/skeptic_bot" },
   },
 ];
 
 const openSource = [
+  {key: "Why Elixir?", href: "https://whyelixir.dev/", say: "An introduction to Elixir and why we use it."},
+  {key: "Optimum Templates", href: "https://github.com/optimumBA/optimum_templates", say: "Phoenix generator templates that follow Optimum's Credo rules."},
   {
     key: "phx.tools",
     href: "https://phx.tools",
-    say: "Sets up an Elixir and Phoenix development environment on Linux or macOS with one command.",
+    say: "Set up an Elixir and Phoenix development environment on Linux or macOS.",
   },
   {
     key: "github_workflows_generator",
@@ -47,30 +50,30 @@ const openSource = [
   {
     key: "optimum_credo",
     href: "https://hex.pm/packages/optimum_credo",
-    say: "The Credo checks we wanted on our own projects, covering readability, test assertions, and LiveView patterns.",
+    say: "Custom Credo checks for Elixir projects.",
   },
   {
     key: "Elixir DevOps series",
     href: "https://optimum.ba/blog/elixir-devops-series/",
-    say: "Six articles on the CI/CD work that usually gets skipped: caching, release tests, preview apps, deployments, and generated infrastructure.",
+    say: "Six articles on Elixir CI/CD: caching, release tests, preview apps, deployments, and generated infrastructure.",
   },
 ];
 
 const history = [
   {
     when: "2022–",
-    name: "Optimum Tech",
-    say: "Optimum Tech is the company behind my software projects. From 2022 to January 2026, I ran Optimum BH, an Elixir and Phoenix agency, leading delivery, technical direction, CI/CD, code review, and team development. My focus is now software products and developer tooling, including Kogen.",
+    name: "Founder & Software Consultant, Optimum",
+    say: "I build software products and provide consulting through Optimum Tech. From 2022 to January 2026, I ran Optimum BH, an Elixir and Phoenix agency, leading delivery, technical direction, code review and team development.",
   },
   {
     when: "2020–24",
     name: "StoryDeck",
-    say: "I joined to build a proof of concept, took it through MVP and into production, then stayed as co-founder and technical lead.",
+    say: "I built a paid proof of concept for Hikaya, then continued the product as StoryDeck as co-founder and technical lead, through MVP and production.",
   },
   {
     when: "2019–",
     name: "Contract work",
-    say: "Twenty-one contracts and more than 4,500 hours. The work included WPA3 support for Nerves on a Raspberry Pi 4, real-time IoT analytics, an esports matchmaking backend, and replacing a legacy PHP service with Elixir services.",
+    say: "Contract work included WPA3 support for Nerves on a Raspberry Pi 4, real-time production tracking with GlobalReader, and other Elixir and Phoenix applications.",
   },
   {
     when: "2012–20",
@@ -80,7 +83,7 @@ const history = [
 ];
 
 const elsewhere = [
-  { label: "Email", href: "mailto:almir@optimum.ba" },
+  { label: "Email", href: "mailto:consulting@optimum.ba" },
   { label: "GitHub", href: "https://github.com/almirsarajcic" },
   { label: "X", href: "https://x.com/ultrathinktrash" },
   {
@@ -92,11 +95,11 @@ const elsewhere = [
 const no = (i: number) => String(i + 1).padStart(2, "0");
 ---
 
-<Base>
+<Base title="Almir Sarajčić | Elixir and Phoenix consultant" description="Elixir and Phoenix consulting, AI features and development workflows. Consulting, product work and writing from Almir Sarajčić, founder of Optimum Tech.">
   <header class="masthead wrap">
     <div class="who">
       <a class="name" href="/">Almir Sarajčić</a>
-      <span class="label">Senior software engineer</span>
+      <span class="label">Elixir &amp; Phoenix consultant</span>
     </div>
     <nav aria-label="Sections">
       <a href="#building">Building</a>
@@ -109,30 +112,20 @@ const no = (i: number) => String(i + 1).padStart(2, "0");
 
   <main id="main">
     <section class="opening wrap">
-      <h1>I build software and better workflows for coding agents.</h1>
+      <h1>I build software and help teams move their projects forward.</h1>
 
-      <p class="lede">
-        I build software and help teams design more reliable ways to work with
-        coding agents: shape the feature, define the boundaries, and check the
-        result.
-      </p>
+      <p class="lede">I help teams build and improve Elixir and Phoenix applications, add AI features, and make better use of coding agents. I've worked in software since 2012 and on professional Elixir projects since 2017.</p>
 
-      <p class="body">
-        I started writing software in 2012 and moved to Elixir in 2017. Before
-        agents, I spent years working on CI, static analysis, and test
-        infrastructure. I now use the same machinery to catch what agents get
-        wrong. Models are good at producing plausible code; the surrounding
-        system has to decide whether it belongs in production.
-      </p>
+      <p class="body">My work includes taking products from proof of concept into production, improving existing applications, and building the checks and tooling around delivery. I work directly on the code as well as the decisions behind it.</p>
 
       <ul class="facts">
         <li><b>Kenya · UTC+3</b></li>
-        <li><b>Elixir since 2017</b></li>
+        <li><b>Professional Elixir work since 2017</b></li>
         <li><b>Bosnian · English</b></li>
       </ul>
 
       <div class="actions">
-        <a class="button" href="mailto:almir@optimum.ba">Let’s talk</a>
+        <a class="button" href="mailto:consulting@optimum.ba">Discuss your project</a>
         <a class="textlink" href="/Almir_Sarajcic_CV.pdf">Download the CV (PDF)</a>
       </div>
     </section>
@@ -141,8 +134,7 @@ const no = (i: number) => String(i + 1).padStart(2, "0");
       <div class="head">
         <h2 id="building-h">Building</h2>
         <p>
-          Products and tools I develop under Optimum Tech, LLC. Kogen is the
-          current focus.
+          Our products at <a href="https://optimum.ba/">Optimum Tech</a>.
         </p>
       </div>
 
@@ -225,18 +217,11 @@ const no = (i: number) => String(i + 1).padStart(2, "0");
 
     <section class="consulting wrap" id="consulting" aria-labelledby="cons-h">
       <div class="panel">
-        <h2 id="cons-h">Engineering workflow consulting</h2>
+        <h2 id="cons-h">Elixir, Phoenix and development workflows</h2>
         <div>
-          <p>
-            I help teams improve how they work with coding agents: shaping
-            features before implementation, choosing where autonomy is
-            appropriate, and designing checks and independent review. We can
-            start with a review of one workflow or a focused pilot around one
-            real feature. My work on Kogen informs the approach; the engagement
-            starts with your team's delivery problem.
-          </p>
-          <a class="textlink" href="mailto:almir@optimum.ba">
-            Discuss your engineering workflow →
+          <p>We can start with a specific application problem, a code or workflow review, or one feature taken through implementation and checks. I provide consulting through Optimum Tech.</p><p>I can also help with AI features, CI/CD, and coding-agent workflows: defining the work, choosing useful checks, and reviewing the result.</p>
+          <a class="textlink" href="mailto:consulting@optimum.ba">
+            Discuss your project →
           </a>
         </div>
       </div>
@@ -246,10 +231,10 @@ const no = (i: number) => String(i + 1).padStart(2, "0");
       <h2 id="closing-h">Let’s talk.</h2>
       <div>
         <p>
-          For engineering opportunities or a conversation about your team’s
-          development workflow, contact me by email.
+          For consulting on your application or development workflow,
+          contact me at the address below.
         </p>
-        <a class="mail" href="mailto:almir@optimum.ba">almir@optimum.ba →</a>
+        <a class="mail" href="mailto:consulting@optimum.ba">consulting@optimum.ba →</a>
       </div>
     </section>
   </main>

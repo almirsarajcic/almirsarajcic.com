@@ -302,3 +302,5 @@ a:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:
 /* Let text enlarge without forcing flex/grid children beyond the page. */
 .entry > *, .who, .masthead nav {min-width:0}
 .closing .mail {overflow-wrap:anywhere;max-width:100%}
+
+.mail{overflow-wrap:anywhere}
