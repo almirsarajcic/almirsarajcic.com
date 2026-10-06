@@ -1,4 +1,6 @@
 ---
+import SiteInformationLinks from "../components/SiteInformationLinks.astro";
+import AgentMetadata from '../components/AgentMetadata.astro';
 import "../styles/site.css";
 import regularFont from "../assets/fonts/IBMPlexSans-Regular.woff2?url";
 import boldFont from "../assets/fonts/IBMPlexSans-SemiBold.woff2?url";
@@ -18,7 +20,9 @@ const canonical = new URL(Astro.url.pathname, "https://almirsarajcic.com").href;
 const person = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://almirsarajcic.com/#person",
   name: "Almir Sarajčić",
+  description,
   url: "https://almirsarajcic.com/",
   jobTitle: "Software Consultant",
   email: "mailto:consulting@optimum.ba",
@@ -45,6 +49,7 @@ const person = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://almirsarajcic.com/brand/social-preview.png" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@ultrathinktrash" />
     <link
@@ -90,9 +95,9 @@ const person = {
         document.head.appendChild(s);
       }
     </script>
-  </head>
+  <AgentMetadata /></head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <slot />
-  </body>
+  <SiteInformationLinks /></body>
 </html>

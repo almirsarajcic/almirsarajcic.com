@@ -31,4 +31,8 @@ The [7 September design record](docs/design-proposal.md) records the accepted de
 
 ## Font and performance maintenance
 
-Licensed full font masters are in `assets/font-sources/`. `scripts/subset-fonts.py` derives Latin/Latin Extended webfonts into `src/assets/fonts/`; run it with Python and fontTools only when font sources or required writing systems change. The normal npm build needs no Python. Astro emits hashed font URLs and minified inline CSS; `public/_headers` gives hashed assets immutable caching. Font licenses accompany both source and public output. Keep Bosnian diacritics, punctuation and arrows in any future subset. The minimal A favicon is owned by `public/favicon.svg`; no separate social card is generated.
+Licensed full font masters are in `assets/font-sources/`. `scripts/subset-fonts.py` derives Latin/Latin Extended webfonts into `src/assets/fonts/`; run it with Python and fontTools only when font sources or required writing systems change. The site build also uses Python 3 to generate agent-readable page representations. Astro emits hashed font URLs and minified inline CSS; `public/_headers` gives hashed assets immutable caching. Font licenses accompany both source and public output. Keep Bosnian diacritics, punctuation and arrows in any future subset. The minimal A favicon is owned by `public/favicon.svg`; `public/brand/social-preview.png` is the social card, with its SVG version alongside it.
+
+## Agent-readable pages
+
+The build derives Markdown from authored Astro pages with `scripts/build-agent-content.py`, and `functions/_middleware.js` serves HTML or Markdown based on `Accept`. `agent-site.json` holds the public summary and a copy of Optimum Tech’s verified organization data. About, Contact and Privacy content lives in `src/pages/`; keep the organization copy aligned with its canonical owner when it changes.
