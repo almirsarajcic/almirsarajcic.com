@@ -1,5 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 
 /* Local review candidate. Copy and fact audit are maintained in the Optimum
    public-presence-approval-2026-09-28 packet; publication remains held. */
@@ -83,33 +85,11 @@ const history = [
   },
 ];
 
-const elsewhere = [
-  { label: "Email", href: "mailto:consulting@optimum.ba" },
-  { label: "GitHub", href: "https://github.com/almirsarajcic" },
-  { label: "X", href: "https://x.com/ultrathinktrash" },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/almir-sarajčić-8911b4429",
-  },
-];
-
 const no = (i: number) => String(i + 1).padStart(2, "0");
 ---
 
 <Base title="Almir Sarajčić | Elixir and Phoenix consultant" description="Elixir and Phoenix consulting, AI features and development workflows. Consulting, product work and writing from Almir Sarajčić, founder of Optimum Tech.">
-  <header class="masthead wrap">
-    <div class="who">
-      <a class="name" href="/">Almir Sarajčić</a>
-      <span class="label">Elixir &amp; Phoenix consultant</span>
-    </div>
-    <nav aria-label="Sections">
-      <a href="#building">Building</a>
-      <a href="#open-source">Open source</a>
-      <a href="#history">History</a>
-      <a href="#consulting">Consulting</a>
-      <a href="/Almir_Sarajcic_CV.pdf">CV (PDF)</a>
-    </nav>
-  </header>
+  <SiteHeader />
 
   <main id="main">
     <section class="opening wrap">
@@ -240,16 +220,5 @@ const no = (i: number) => String(i + 1).padStart(2, "0");
     </section>
   </main>
 
-  <footer class="site-foot wrap">
-    <ul>
-      {
-        elsewhere.map((item) => (
-          <li>
-            <a href={item.href}>{item.label}</a>
-          </li>
-        ))
-      }
-    </ul>
-    <span class="label colophon">Set in IBM Plex</span>
-  </footer>
+  <SiteFooter />
 </Base>

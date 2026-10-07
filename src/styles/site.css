@@ -304,3 +304,10 @@ a:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:
 .closing .mail {overflow-wrap:anywhere;max-width:100%}
 
 .mail{overflow-wrap:anywhere}
+
+/* Information pages share the portfolio's typography, measure and rhythm. */
+.information-copy{max-width:var(--measure);margin-top:var(--s4);color:var(--muted)}
+.information-copy > * + *{margin-top:var(--s3)}
+.information-copy h2{margin-top:var(--s5);font-size:clamp(1.5rem,1.2rem + 1.1vw,2rem);color:var(--ink)}
+.information-copy a{overflow-wrap:anywhere}
+.site-foot nav{min-width:0}
