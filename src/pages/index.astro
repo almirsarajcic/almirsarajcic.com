@@ -3,22 +3,14 @@ import Base from "../layouts/Base.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
-/* Local review candidate. Copy and fact audit are maintained in the Optimum
-   public-presence-approval-2026-09-28 packet; publication remains held. */
+/* Personal copy owner: Consulting/career/public-presence-2026-09-28/personal-website.md. */
 
 const building = [
-  {
-    name: "Kogen",
-    href: "https://kogen.dev",
-    meta: "kogen.dev",
-    say: "A software-building system designed around feature shaping, implementation, checks and independent review.",
-    link: { label: "View source", href: "https://github.com/KogenAI/kogen" },
-  },
   {
     name: "Combobulate",
     href: "https://combobulate.dev",
     meta: "combobulate.dev",
-    say: "Build and publish static websites and Vite apps through Telegram.",
+    say: "Earlier product work on building and publishing static websites and Vite apps through Telegram. The former hosted service is retired.",
   },
   {
     name: "ElixirDrops",
@@ -33,6 +25,21 @@ const building = [
     meta: "skeptic.bot",
     say: "Search conspiracy and alternative podcasts, ask questions, and find the episodes behind the answers.",
     link: { label: "View source", href: "https://github.com/optimumBA/skeptic_bot" },
+  },
+];
+
+const services = [
+  {
+    name: "Elixir and Phoenix development",
+    say: "Build a feature, connect an integration or repair a bug in your Elixir or Phoenix application. Get the agreed implementation, checks that demonstrate the result and a clear handoff.",
+  },
+  {
+    name: "Development workflows and faster feedback",
+    say: "Shorten feedback loops while keeping useful checks. Improve builds, tests, CI/CD, preview environments and review practices so your team can develop, verify and deliver changes sooner.",
+  },
+  {
+    name: "Practical coding-agent workflows",
+    say: "Give coding agents useful context and clear tasks, then review and verify their changes. Get a practical workflow your team can repeat, with reusable instructions and a walkthrough.",
   },
 ];
 
@@ -88,16 +95,16 @@ const history = [
 const no = (i: number) => String(i + 1).padStart(2, "0");
 ---
 
-<Base title="Almir Sarajčić | Elixir and Phoenix consultant" description="Elixir and Phoenix consulting, AI features and development workflows. Consulting, product work and writing from Almir Sarajčić, founder of Optimum Tech.">
+<Base title="Almir Sarajčić | Software consultant · Building Kogen" description="Software consultant specializing in Elixir, Phoenix and agentic development. Building Kogen. Application development, faster development feedback and practical coding-agent workflows.">
   <SiteHeader />
 
   <main id="main">
     <section class="opening wrap">
-      <h1>I build software and help teams move their projects forward.</h1>
+      <h1>I help teams build and improve software.</h1>
 
-      <p class="lede">I help teams build and improve Elixir and Phoenix applications, add AI features, and make better use of coding agents. I've worked in software since 2012 and on professional Elixir projects since 2017.</p>
+      <p class="lede">I’m a software consultant specializing in Elixir, Phoenix and agentic development. I’m also building <a href="https://kogen.dev/">Kogen</a>.</p>
 
-      <p class="body">My work includes taking products from proof of concept into production, improving existing applications, and building the checks and tooling around delivery. I work directly on the code as well as the decisions behind it.</p>
+      <p class="body">I use coding agents to deliver software and take responsibility for the technical decisions, verification and final result. I've worked in software since 2012.</p>
 
       <ul class="facts">
         <li><b>Kenya · UTC+3</b></li>
@@ -111,9 +118,52 @@ const no = (i: number) => String(i + 1).padStart(2, "0");
       </div>
     </section>
 
-    <section class="section wrap" id="building" aria-labelledby="building-h">
+    <section class="section wrap" id="consulting" aria-labelledby="cons-h">
       <div class="head">
-        <h2 id="building-h">Building</h2>
+        <h2 id="cons-h">How I can help</h2>
+        <p>Start with a specific problem or an ongoing engagement. We agree on the outcome, the checks and the handoff. I provide consulting through <a href="https://optimum.ba/">Optimum Tech</a>.</p>
+      </div>
+      <ul>
+        {services.map((item, i) => (
+          <li class="entry">
+            <span class="no" aria-hidden="true">{no(i)}</span>
+            <h3>{item.name}</h3>
+            <p class="say">{item.say}</p>
+          </li>
+        ))}
+      </ul>
+      <a class="textlink" href="mailto:consulting@optimum.ba">Discuss your project →</a>
+    </section>
+
+    <section class="section wrap" id="building" aria-labelledby="kogen-h">
+      <div class="head">
+        <h2 id="kogen-h">Building Kogen</h2>
+        <p>My work on software-building systems and verification.</p>
+      </div>
+      <div class="entry">
+        <span class="no" aria-hidden="true">01</span>
+        <div>
+          <h3><a href="https://kogen.dev/">Kogen</a></h3>
+          <span class="label meta">In development</span>
+        </div>
+        <div>
+          <p class="say">I’m developing Kogen, a software-building system designed around feature shaping, implementation, checks and independent review.</p>
+          <a class="textlink" href="https://kogen.dev/">Explore Kogen ↗</a>
+        </div>
+      </div>
+      <div class="entry">
+        <span class="no" aria-hidden="true">02</span>
+        <h3><a href="https://bench.kogen.dev/">Kogen Bench</a></h3>
+        <div>
+          <p class="say">Experiments, methods and results on coding agents and software verification.</p>
+          <a class="textlink" href="https://bench.kogen.dev/">Read the experiments ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="products" aria-labelledby="building-h">
+      <div class="head">
+        <h2 id="building-h">Other products</h2>
         <p>
           Our products at <a href="https://optimum.ba/">Optimum Tech</a>.
         </p>
@@ -194,18 +244,6 @@ const no = (i: number) => String(i + 1).padStart(2, "0");
           ))
         }
       </ol>
-    </section>
-
-    <section class="consulting wrap" id="consulting" aria-labelledby="cons-h">
-      <div class="panel">
-        <h2 id="cons-h">Elixir, Phoenix and development workflows</h2>
-        <div>
-          <p>We can start with a specific application problem, a code or workflow review, or one feature taken through implementation and checks. I provide consulting through Optimum Tech.</p><p>I can also help with AI features, CI/CD, and coding-agent workflows: defining the work, choosing useful checks, and reviewing the result.</p>
-          <a class="textlink" href="mailto:consulting@optimum.ba">
-            Discuss your project →
-          </a>
-        </div>
-      </div>
     </section>
 
     <section class="closing wrap" aria-labelledby="closing-h">

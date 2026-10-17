@@ -23,7 +23,7 @@ The 7 September redesign uses IBM Plex typography, aligned project rows and a co
 - `docs/` — maintained production and domain workflow.
 - `dist/` — generated production output; not committed.
 
-Career copy and the canonical application CV are maintained in the adjacent JobHunt workspace. Update those owners first when facts or positioning change, then synchronize this repository and verify the public result.
+Personal consulting copy and the public consulting CV are maintained in the Consulting Area, under `career/public-presence-2026-09-28/`. JobHunt’s application CV is a separate edition. Update the Consulting owners when facts or positioning change, then synchronize this repository and verify the public result.
 
 ## Design proposal
 
@@ -31,7 +31,7 @@ The [7 September design record](docs/design-proposal.md) records the accepted de
 
 ## Font and performance maintenance
 
-Licensed full font masters are in `assets/font-sources/`. `scripts/subset-fonts.py` derives Latin/Latin Extended webfonts into `src/assets/fonts/`; run it with Python and fontTools only when font sources or required writing systems change. The site build also uses Python 3 to generate agent-readable page representations. Astro emits hashed font URLs and minified inline CSS; `public/_headers` gives hashed assets immutable caching. Font licenses accompany both source and public output. Keep Bosnian diacritics, punctuation and arrows in any future subset. The minimal A favicon is owned by `public/favicon.svg`; `public/brand/social-preview.png` is the social card, with its SVG version alongside it.
+Licensed full font masters are in `assets/font-sources/`. `scripts/subset-fonts.py` derives Latin/Latin Extended webfonts into `src/assets/fonts/`; run it with Python and fontTools only when font sources or required writing systems change. The site build also uses Python 3 to generate agent-readable page representations. Astro emits hashed font URLs and minified inline CSS; `public/_headers` gives hashed assets immutable caching. Font licenses accompany both source and public output. Keep Bosnian diacritics, punctuation and arrows in any future subset. The minimal A favicon is owned by `public/favicon.svg`. [Social-card sources, exports and checks](docs/social-preview.md) own the link-preview image.
 
 ## Agent-readable pages
 
