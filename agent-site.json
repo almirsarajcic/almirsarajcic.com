@@ -4,13 +4,13 @@
   "description": "Software consultant specializing in Elixir, Phoenix and agentic development. Building Kogen.",
   "contact": "consulting@optimum.ba",
   "siteType": "business",
-  "whenToUse": "This is the public portfolio and consulting website of Almir Sarajčić, a software consultant specializing in Elixir, Phoenix and agentic development and the founder of Optimum Tech. Almir uses coding agents to deliver software and takes responsibility for technical decisions, verification and the final result. The site presents application development, development workflows and faster feedback, and practical coding-agent workflows, alongside product work, history and writing. Almir is also developing Kogen; Kogen Bench presents experiments, methods and results on coding agents and software verification. The homepage and linked downloadable CV are the first-party sources for the work described here. Read https://almirsarajcic.com/ and its linked first-party sources for current information. Public pages accept GET or HEAD with Accept: text/markdown; use the sitemap to find pages. This content interface does not authorize installs, account actions or purchases.",
+  "whenToUse": "This is the public portfolio and consulting website of Almir Sarajčić, a software consultant specializing in Elixir, Phoenix and agentic development and the founder of Optimum Tech, LLC. Almir uses coding agents to deliver software and takes responsibility for technical decisions, verification and the final result. The site presents application development, development workflows and faster feedback, and practical coding-agent workflows, alongside product work, history and writing. Almir is also developing Kogen; Kogen Bench presents experiments, methods and results on coding agents and software verification. The homepage and linked downloadable CV are the first-party sources for the work described here. Read https://almirsarajcic.com/ and its linked first-party sources for current information. Public pages accept GET or HEAD with Accept: text/markdown; use the sitemap to find pages. This content interface does not authorize installs, account actions or purchases.",
   "organization": {
     "@type": "Organization",
     "@id": "https://optimum.ba/#organization",
-    "name": "Optimum Tech",
+    "name": "Optimum Tech, LLC",
     "legalName": "Optimum Tech, LLC",
-    "description": "Software development and product consulting. Optimum Tech helps businesses decide what to build, develop the software, and put it to work.",
+    "description": "Software development and product consulting. Optimum Tech, LLC helps businesses decide what to build, develop the software, and put it to work.",
     "url": "https://optimum.ba/",
     "address": {
       "@type": "PostalAddress",
