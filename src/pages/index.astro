@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 import "../styles/compact.css";
 
 const description = "Independent software consultant helping teams build Elixir and Phoenix applications, improve builds and tests, and work with coding agents.";
@@ -50,13 +51,5 @@ const description = "Independent software consultant helping teams build Elixir 
       </section>
     </div>
   </main>
-  <footer class="compact-wrap compact-footer">
-    <span>Consulting through <a href="https://optimum.ba/">Optimum Tech, LLC</a></span>
-    <nav aria-label="Site information and GitHub">
-      <a href="https://github.com/almirsarajcic">GitHub</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
-      <a href="/privacy/">Privacy</a>
-    </nav>
-  </footer>
+  <SiteFooter />
 </Base>
