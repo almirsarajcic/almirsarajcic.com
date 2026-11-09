@@ -1,262 +1,62 @@
 ---
 import Base from "../layouts/Base.astro";
 import SiteHeader from "../components/SiteHeader.astro";
-import SiteFooter from "../components/SiteFooter.astro";
+import "../styles/home.css";
 
-/* Personal copy owner: Consulting/career/public-presence-2026-09-28/personal-website.md. */
-
-const building = [
-  {
-    name: "Combobulate",
-    href: "https://combobulate.dev",
-    meta: "combobulate.dev",
-    say: "Earlier product work on building and publishing static websites and Vite apps through Telegram. The former hosted service is retired.",
-  },
-  {
-    name: "ElixirDrops",
-    href: "https://elixirdrops.net",
-    meta: "elixirdrops.net",
-    say: "A platform for publishing and discovering practical Elixir and Phoenix tips.",
-    link: { label: "View source", href: "https://github.com/optimumBA/elixir_drops" },
-  },
-  {
-    name: "Skeptic.bot",
-    href: "https://skeptic.bot",
-    meta: "skeptic.bot",
-    say: "Search conspiracy and alternative podcasts, ask questions, and find the episodes behind the answers.",
-    link: { label: "View source", href: "https://github.com/optimumBA/skeptic_bot" },
-  },
-];
-
-const services = [
-  {
-    name: "Elixir and Phoenix development",
-    say: "Build a feature, connect an integration or repair a bug in your Elixir or Phoenix application. Get the agreed implementation, checks that demonstrate the result and a clear handoff.",
-  },
-  {
-    name: "Development workflows and faster feedback",
-    say: "Shorten feedback loops while keeping useful checks. Improve builds, tests, CI/CD, preview environments and review practices so your team can develop, verify and deliver changes sooner.",
-  },
-  {
-    name: "Practical coding-agent workflows",
-    say: "Give coding agents useful context and clear tasks, then review and verify their changes. Get a practical workflow your team can repeat, with reusable instructions and a walkthrough.",
-  },
-];
-
-const openSource = [
-  {"key": "elixir.menu", "href": "https://elixir.menu/", "say": "A guide to choosing tools for Elixir applications."},
-  {key: "Why Elixir?", href: "https://whyelixir.dev/", say: "An introduction to Elixir and why we use it."},
-  {key: "Optimum Templates", href: "https://github.com/optimumBA/optimum_templates", say: "Phoenix generator templates that follow Optimum's Credo rules."},
-  {
-    key: "phx.tools",
-    href: "https://phx.tools",
-    say: "Set up an Elixir and Phoenix development environment on Linux or macOS.",
-  },
-  {
-    key: "github_workflows_generator",
-    href: "https://hex.pm/packages/github_workflows_generator",
-    say: "Define GitHub Actions workflows in Elixir and generate the YAML.",
-  },
-  {
-    key: "optimum_credo",
-    href: "https://hex.pm/packages/optimum_credo",
-    say: "Custom Credo checks for Elixir projects.",
-  },
-  {
-    key: "Elixir DevOps series",
-    href: "https://optimum.ba/blog/elixir-devops-series/",
-    say: "Six articles on Elixir CI/CD: caching, release tests, preview apps, deployments, and generated infrastructure.",
-  },
-];
-
-const history = [
-  {
-    when: "2022–",
-    name: "Founder & Software Consultant, Optimum Tech, LLC",
-    say: "I build software products and provide consulting through Optimum Tech, LLC. From 2022 to January 2026, I ran Optimum BH, an Elixir and Phoenix agency, leading delivery, technical direction, code review and team development.",
-  },
-  {
-    when: "2020–24",
-    name: "StoryDeck",
-    say: "I built a paid proof of concept for Hikaya, then continued the product as StoryDeck as co-founder and technical lead, through MVP and production.",
-  },
-  {
-    when: "2019–",
-    name: "Contract work",
-    say: "Contract work included WPA3 support for Nerves on a Raspberry Pi 4, real-time production tracking with GlobalReader, and other Elixir and Phoenix applications.",
-  },
-  {
-    when: "2012–20",
-    name: "Earlier",
-    say: "I worked on the backend at Mukuru, a pan-African remittances company, mostly in PHP with domain-driven design and plenty of legacy code. Before that I was full-stack at Klika and Social Eddy.",
-  },
-];
-
-const no = (i: number) => String(i + 1).padStart(2, "0");
+const description = "Independent software consultant helping teams build Elixir and Phoenix applications, improve builds and tests, and work with coding agents.";
 ---
+<Base title="Almir Sarajčić | Software consultant" description={description} bodyClass="by-problem">
+  <SiteHeader home />
+  <main class="compact-wrap" id="main">
+    <div class="intro">
+      <p>I’m an independent software consultant. I work on Elixir and Phoenix applications and help teams improve how they build, test and ship software.</p>
+    </div>
 
-<Base title="Almir Sarajčić | Software consultant · Building Kogen" description="Software consultant specializing in Elixir, Phoenix and agentic development. Building Kogen. Application development, faster development feedback and practical coding-agent workflows.">
-  <SiteHeader />
-
-  <main id="main">
-    <section class="opening wrap">
-      <h1>I help teams build and improve software.</h1>
-
-      <p class="lede">I’m a software consultant specializing in Elixir, Phoenix and agentic development. I’m also building <a href="https://kogen.dev/">Kogen</a>.</p>
-
-      <p class="body">I use coding agents to deliver software and take responsibility for the technical decisions, verification and final result. I've worked in software since 2012.</p>
-
-      <ul class="facts">
-        <li><b>Kenya · UTC+3</b></li>
-        <li><b>Professional Elixir work since 2020</b></li>
-        <li><b>Bosnian · English</b></li>
-      </ul>
-
-      <div class="actions">
-        <a class="button" href="mailto:consulting@optimum.ba">Discuss your project</a>
-        <a class="textlink" href="/Almir_Sarajcic_CV.pdf">Download the CV (PDF)</a>
+    <section class="primary" id="consulting">
+      <h2>What are you working on?</h2>
+      <div class="problems">
+        <details>
+          <summary>Need a Phoenix feature built or a bug fixed?</summary>
+          <p>Add a feature, connect an API, or track down a bug in an existing Elixir or Phoenix app. For example, a LiveView workflow or a third-party integration.</p>
+        </details>
+        <details>
+          <summary>Waiting too long for tests, CI or previews?</summary>
+          <p>Find what slows down your builds, tests, CI or previews, and shorten the wait while keeping useful checks. For example, a slow CI job or a preview environment the team rarely uses.</p>
+        </details>
+        <details>
+          <summary>Trying to use coding agents on a real codebase?</summary>
+          <p>Give agents enough context and clear tasks. Put checks and independent review in the workflow. For example, a repeatable way to hand an agent a change and check what it did.</p>
+        </details>
       </div>
+      <p class="contact">Tell me a bit about your project at <a href="mailto:consulting@optimum.ba">consulting@optimum.ba</a>.</p>
     </section>
 
-    <section class="section wrap" id="consulting" aria-labelledby="cons-h">
-      <div class="head">
-        <h2 id="cons-h">How I can help</h2>
-        <p>Start with a specific problem or an ongoing engagement. We agree on the outcome, the checks and the handoff. I provide consulting through <a href="https://optimum.ba/">Optimum Tech, LLC</a>.</p>
-      </div>
-      <ul>
-        {services.map((item, i) => (
-          <li class="entry">
-            <span class="no" aria-hidden="true">{no(i)}</span>
-            <h3>{item.name}</h3>
-            <p class="say">{item.say}</p>
-          </li>
-        ))}
-      </ul>
-      <a class="textlink" href="mailto:consulting@optimum.ba">Discuss your project →</a>
-    </section>
+    <div class="notes">
+      <section id="building">
+        <h2>What I’m building</h2>
+        <p>I’m building <a href="https://kogen.dev/">Kogen</a>. You decide how a feature should work. Kogen implements it, runs the checks, gets an independent review and commits the result.</p>
+        <p>I’m also putting together <a href="https://vibecodingforadults.com/">Vibe Coding for Adults</a>, a practical course for people who already use or want to start using coding agents. It covers how to write and test instructions and workflows for those agents.</p>
+      </section>
 
-    <section class="section wrap" id="building" aria-labelledby="kogen-h">
-      <div class="head">
-        <h2 id="kogen-h">Building Kogen</h2>
-        <p>My work on software-building systems and verification.</p>
-      </div>
-      <div class="entry">
-        <span class="no" aria-hidden="true">01</span>
-        <div>
-          <h3><a href="https://kogen.dev/">Kogen</a></h3>
-          <span class="label meta">In development</span>
-        </div>
-        <div>
-          <p class="say">I’m developing Kogen, a software-building system designed around feature shaping, implementation, checks and independent review.</p>
-          <a class="textlink" href="https://kogen.dev/">Explore Kogen ↗</a>
-        </div>
-      </div>
-      <div class="entry">
-        <span class="no" aria-hidden="true">02</span>
-        <h3><a href="https://bench.kogen.dev/">Kogen Bench</a></h3>
-        <div>
-          <p class="say">Experiments, methods and results on coding agents and software verification.</p>
-          <a class="textlink" href="https://bench.kogen.dev/">Read the experiments ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap" id="products" aria-labelledby="building-h">
-      <div class="head">
-        <h2 id="building-h">Other products</h2>
-        <p>
-          Our products at <a href="https://optimum.ba/">Optimum Tech, LLC</a>.
-        </p>
-      </div>
-
-      <ul>
-        {
-          building.map((item, i) => (
-            <li class="entry">
-              <span class="no" aria-hidden="true">
-                {no(i)}
-              </span>
-              <div>
-                <h3>
-                  <a href={item.href}>{item.name}</a>
-                </h3>
-                <span class="label meta">{item.meta}</span>
-              </div>
-              <div>
-                <p class="say">{item.say}</p>
-                {item.link && (
-                  <a class="textlink" href={item.link.href}>
-                    {item.link.label} ↗
-                  </a>
-                )}
-              </div>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-
-    <section class="section wrap" id="open-source" aria-labelledby="oss-h">
-      <div class="head">
-        <h2 id="oss-h">Open source</h2>
-        <p>
-          Tooling and writing released for other Elixir and Phoenix teams to
-          use.
-        </p>
-      </div>
-
-      <ul>
-        {
-          openSource.map((item, i) => (
-            <li class="entry tight">
-              <span class="no" aria-hidden="true">
-                {no(i)}
-              </span>
-              <span class="key">
-                <a href={item.href}>{item.key}</a>
-              </span>
-              <p class="say">{item.say}</p>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-
-    <section class="section wrap" id="history" aria-labelledby="history-h">
-      <div class="head">
-        <h2 id="history-h">History</h2>
-        <p>Where the work has happened, most recent first.</p>
-      </div>
-
-      <ol>
-        {
-          history.map((item, i) => (
-            <li class="entry event">
-              <span class="no" aria-hidden="true">
-                {no(i)}
-              </span>
-              <span class="when">{item.when}</span>
-              <div>
-                <span class="name">{item.name}</span>
-                <p class="say">{item.say}</p>
-              </div>
-            </li>
-          ))
-        }
-      </ol>
-    </section>
-
-    <section class="closing wrap" aria-labelledby="closing-h">
-      <h2 id="closing-h">Let’s talk.</h2>
-      <div>
-        <p>
-          For consulting on your application or development workflow,
-          contact me at the address below.
-        </p>
-        <a class="mail" href="mailto:consulting@optimum.ba">consulting@optimum.ba →</a>
-      </div>
-    </section>
+      <section id="writing">
+        <h2>Writing</h2>
+        <ul class="writing">
+          <li><a href="https://elixirdrops.net/d/9mrw2kg3">Stop mounting your LiveView twice</a></li>
+          <li><a href="https://optimum.ba/blog/elixir-devops-series/">Elixir DevOps series</a></li>
+          <li><a href="https://kogen.dev/notes/2026-10-30/why-i-fork-my-chatgpt-conversations/">Why I fork my ChatGPT conversations</a></li>
+          <li><a href="https://kogen.dev/notes/2026-09-20/i-dont-want-agents-md/">I don’t want AGENTS.md</a></li>
+          <li><a href="https://kogen.dev/notes/2026-10-26/dont-get-locked-in/">Don’t get locked in</a></li>
+        </ul>
+      </section>
+    </div>
   </main>
-
-  <SiteFooter />
+  <footer class="compact-wrap compact-footer">
+    <span>Consulting through <a href="https://optimum.ba/">Optimum Tech, LLC</a></span>
+    <nav aria-label="Site information and GitHub">
+      <a href="https://github.com/almirsarajcic">GitHub</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </footer>
 </Base>

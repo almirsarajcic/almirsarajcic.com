@@ -8,12 +8,14 @@ interface Props {
   title?: string;
   description?: string;
   analytics?: boolean;
+  bodyClass?: string;
 }
 
 const {
   analytics = true,
+  bodyClass,
   title = "Almir Sarajčić",
-  description = "Software consultant specializing in Elixir, Phoenix and agentic development. Founder of Optimum Tech. Building Kogen.",
+  description = "Software consultant specializing in Elixir, Phoenix and agentic development. Founder of Optimum Tech, LLC. Building Kogen.",
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, "https://almirsarajcic.com").href;
@@ -104,7 +106,7 @@ const person = {
       }
     </script>}
   <AgentMetadata /></head>
-  <body>
+  <body class={bodyClass}>
     <a class="skip" href="#main">Skip to content</a>
     <slot />
   </body>

@@ -1,0 +1,157 @@
+.by-problem {
+  --paper: #faf8f5;
+  --ink: #2c2620;
+  --muted: #5e554c;
+  --accent: #804234;
+  --accent-ink: #fff;
+  --rule: #e2d9cf;
+  --panel: #f1e9e1;
+  --details-paper: #fff;
+  --focus: var(--accent);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+@media (prefers-color-scheme: dark) {
+  .by-problem {
+    --paper: #14130f;
+    --ink: #eeebe2;
+    --muted: #b7b3a6;
+    --accent: #e59a74;
+    --accent-ink: #14130f;
+    --rule: #40382f;
+    --panel: #30261f;
+    --details-paper: #201c17;
+  }
+}
+
+.compact-wrap {
+  width: min(760px, 100% - 40px);
+  margin-inline: auto;
+}
+
+.by-problem a {
+  color: var(--accent);
+  text-underline-offset: 0.17em;
+}
+
+.by-problem main {
+  padding-block: 21px 28px;
+}
+
+.by-problem h2 {
+  font-size: 1.2rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin-bottom: 9px;
+}
+
+.by-problem p + p {
+  margin-top: 9px;
+}
+
+.by-problem .intro {
+  max-width: 65ch;
+  margin-bottom: 17px;
+}
+
+.by-problem .primary {
+  margin-bottom: 23px;
+}
+
+.problems {
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  background: var(--details-paper);
+}
+
+.problems details + details {
+  border-top: 1px solid var(--rule);
+}
+
+.problems summary {
+  min-height: 44px;
+  padding: 10px 13px;
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.problems summary:hover,
+.problems details[open] summary {
+  background: var(--panel);
+}
+
+.problems summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+}
+
+.problems details p {
+  padding: 4px 14px 13px;
+  color: var(--muted);
+}
+
+.by-problem .contact {
+  margin-top: 12px;
+}
+
+.by-problem .notes {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 20px 35px;
+  border-top: 1px solid var(--rule);
+  padding-top: 15px;
+}
+
+.notes p {
+  color: var(--muted);
+}
+
+.by-problem .writing {
+  list-style: disc;
+  padding-left: 17px;
+}
+
+.writing li + li {
+  margin-top: 4px;
+}
+
+.compact-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 22px;
+  padding-block: 12px 18px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.compact-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+}
+
+.compact-footer nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+@media (max-width: 620px) {
+  .compact-wrap {
+    width: calc(100% - 30px);
+  }
+
+  .by-problem main {
+    padding-block: 15px 22px;
+  }
+
+  .by-problem .notes {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

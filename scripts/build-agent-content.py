@@ -40,7 +40,8 @@ def render(node,origin):
         return '\n\n'+link+'\n'+'\n'.join(lines[1:])+'\n\n' if len(lines)>1 or heading else link
     if t=='img' and a.get('alt'):return '!['+a['alt'].replace(']','\\]')+']('+urljoin(origin,a.get('src',''))+')'
     if re.fullmatch('h[1-6]',t):return '\n\n'+'#'*int(t[1])+' '+body.strip()+'\n\n'
-    if t in {'p','div','section','article','main','header','dl','blockquote','table','tr'}:return '\n\n'+body.strip()+'\n\n'
+    if t=='summary':return '\n\n### '+body.strip()+'\n\n'
+    if t in {'p','div','section','article','main','header','details','dl','blockquote','table','tr'}:return '\n\n'+body.strip()+'\n\n'
     if t in {'ul','ol'}:return '\n'+body+'\n'
     if t=='li':return '\n- '+body.strip()+'\n'
     if t in {'td','th'}:return body.strip()+' | '
