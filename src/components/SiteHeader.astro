@@ -6,7 +6,7 @@ interface Props {
 const { home = false } = Astro.props;
 ---
 <header class="compact-header">
-  <div class={home ? "compact-wrap header-content" : "wrap header-content"}>
+  <div class="compact-wrap header-content">
     {home ? <h1>Almir Sarajčić</h1> : <a class="name" href="/">Almir Sarajčić</a>}
     <a class="download" href="/Almir_Sarajcic_CV.pdf" download>Download CV (PDF)</a>
   </div>

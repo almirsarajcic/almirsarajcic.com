@@ -2,14 +2,37 @@
 import Base from './Base.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/compact.css';
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
 ---
-<Base title={`${title} — Almir Sarajčić`} description={description} analytics={false}>
+<Base title={`${title} — Almir Sarajčić`} description={description} analytics={false} bodyClass="compact-site">
   <SiteHeader />
-  <main id="main" class="information opening wrap">
+  <main id="main" class="compact-wrap information">
     <h1>{title}</h1>
     <div class="information-copy"><slot /></div>
   </main>
   <SiteFooter />
 </Base>
+
+<style>
+  .information h1 {
+    font-size: 1.375rem;
+    margin-bottom: 12px;
+  }
+
+  .information-copy {
+    max-width: 65ch;
+    margin-top: 0;
+    color: var(--ink);
+  }
+
+  .information-copy :global(* + *) {
+    margin-top: 12px;
+  }
+
+  .information-copy :global(h2) {
+    margin-top: 20px;
+    font-size: 1.125rem;
+  }
+</style>

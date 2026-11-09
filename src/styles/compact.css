@@ -1,4 +1,4 @@
-.by-problem {
+.compact-site {
   --paper: #faf8f5;
   --ink: #2c2620;
   --muted: #5e554c;
@@ -13,7 +13,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .by-problem {
+  .compact-site {
     --paper: #14130f;
     --ink: #eeebe2;
     --muted: #b7b3a6;
@@ -30,12 +30,12 @@
   margin-inline: auto;
 }
 
-.by-problem a {
+.compact-site a {
   color: var(--accent);
   text-underline-offset: 0.17em;
 }
 
-.by-problem main {
+.compact-site main {
   padding-block: 21px 28px;
 }
 
@@ -129,7 +129,8 @@
   font-size: 0.9rem;
 }
 
-.compact-footer nav {
+.compact-footer nav,
+.compact-footer ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0 16px;
@@ -146,7 +147,7 @@
     width: calc(100% - 30px);
   }
 
-  .by-problem main {
+  .compact-site main {
     padding-block: 15px 22px;
   }
 
